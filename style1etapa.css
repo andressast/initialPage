@@ -1,35 +1,3 @@
-@media (max-width: 600px) {
-  /* .containerContent {
-    background-color: turquoise;
-  }
-
-  .containerPost {
-    grid-template-columns: repeat(1, 1fr);
-    background-color: slateblue;
-  }
-
-  .containerCards {
-    background-color: orange;
-    display: grid;
-
-
-  }
-
-  .cardPost {
-    background-color: yellow;
-  }
-
-
-
-  .containerCategorias {
-    background-color: violet;
-  } */
-
-  .containerCards {
-    grid-template-columns: 1fr;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -43,7 +11,33 @@
   --tertiary-color: #1090C3;
 }
 
-/* tamanho de fonte dimensionado de acordo com janela */
+@media (min-width: 320px) {
+  .containerCards {
+    grid-template-columns: repeat(1, minmax(6rem, auto));
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .containerContent {
+    grid-template-columns: repeat(2, minmax(6rem, auto));
+  }
+
+  .containerCards {
+    grid-template-columns: repeat(1, minmax(6rem, auto));
+  }
+}
+
+@media (min-width: 992px) {
+  .containerContent {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .containerCards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 html {
   font-size: calc(60% + 0.8vmin);
 }
@@ -67,11 +61,11 @@ main {
 h1 {
   text-align: center;
   margin: 1.2rem;
+  font-size: calc(1em + 1vw);
 }
 
 .containerContent {
   display: grid;
-  grid-template-columns: 2fr 1fr;
 }
 
 .containerPost {
@@ -80,8 +74,6 @@ h1 {
 
 .containerCards {
   display: grid;
-  /* grid-template-columns: repeat(2, 300px); */
-  grid-template-columns: 1fr 1fr;
   place-items: center;
   column-gap: 1.5rem;
   row-gap: 1.5rem;
